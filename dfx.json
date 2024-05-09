@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "fileStorage_backend": {
+      "main": "src/fileStorage_backend/main.mo",
+      "type": "motoko"
+    },
+    "fileStorage_frontend": {
+      "dependencies": [
+        "fileStorage_backend"
+      ],
+      "source": [
+        "src/fileStorage_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "fileStorage_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
