@@ -1,31 +1,17 @@
-import { useState } from 'react';
+import React from "react";
+import FileUpload from "./components/FileUpload";
+import FileList from "./components/FileList";
+import './assets/app.css'
 import { fileStorage_backend } from 'declarations/fileStorage_backend';
 
-function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    fileStorage_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+const App = () => {
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <div>
+      <FileUpload ></FileUpload>
+      <FileList ></FileList>
+    </div>
   );
-}
+};
 
 export default App;
